@@ -17,7 +17,7 @@ const routes = {
   "ecr.hackserver.net": "https://public.ecr.aws",
 
   // staging
-  "docker-staging.hackserver.net": dockerHub,
+  "docker-staging.libcuda.so": dockerHub,
 };
 
 function routeByHosts(host) {

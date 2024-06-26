@@ -16,7 +16,6 @@ const routes = {
   "k8s.hackserver.net": "https://registry.k8s.io",
   "ghcr.hackserver.net": "https://ghcr.io",
   "cloudsmith.hackserver.net": "https://docker.cloudsmith.io",
-  "ecr.hackserver.net": "https://public.ecr.aws",
 
   // staging
   "docker-staging.hackserver.net": dockerHub,
@@ -44,6 +43,15 @@ async function handleRequest(request) {
         status: 404,
       }
     );
+  }
+  // return tips.html
+  if (url.pathname === "/") {
+    return new Response(DOCS, {
+      status: 200,
+      headers: {
+        "content-type": "text/html"
+      }
+    });
   }
   const isDockerHub = upstream == dockerHub;
   const authorization = request.headers.get("Authorization");

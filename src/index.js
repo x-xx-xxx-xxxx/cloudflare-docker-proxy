@@ -1,3 +1,4 @@
+import DOCS from './tips.html'
 
 addEventListener("fetch", (event) => {
   event.passThroughOnException();
